@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<header>
+
+    <a href="#" class="logo"><span>PARKING</span>LOT</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="rhome.html">ABOUT</a>
+        <a href="reservation.html">RESERVATION</a>
+         <a href="reservation.html">RESERVATION</a>
+        <a href="#map">MAP</a>
+        <a href="#team">TEAM</a>
+      
+        
+    </nav>
+
+</header>
+
+    <style>
+        
+header{
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 1rem;
+    color:var(--purple);
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+header .navbar a{
+    font-size: 1rem;
+    margin-left: 2rem;
+    color:var(--purple);
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 3rem;
+    color:var(--purple);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+       
+
+            .register .nav-tabs .nav-link:hover{
+                border: BLACK;
+            }
+            .text-align{
+                margin-top: 0%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 20%;
+                margin-left: 20%;
+            }
+            .register-heading{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: black;
+            }
+            .register-heading h1{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #e9ecef;
+            }
+                background:-webkit-linear-gradient(left, #fc46aa, #00c6ff); 
+                margin-top: 2%;
+                padding: 2%;
+                border-radius: 3.5rem;
+            }
+            .btnSubmit
+            {
+                width: 30%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+        
+        
+        
+        
+        
+        
+@media (max-width:768px){
+
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header .navbar{
+        position: absolute;
+        top:100%; left: 0;
+        width:100%;
+        background:#fff;
+        padding:1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: .2s linear;
+    }
+
+    header .navbar a{
+        display: block;
+        margin:2rem 0;
+        font-size: 2rem;
+    }
+
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    header input:checked ~ label::before{
+        content:'\f00d';
+    }
+    </style>
+
+</head>
+<body>
+    
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Registration Form</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        
+                                        <div class="form-group">
+                                            <input type="text" name="fullname" class="form-control" placeholder="FullName " value="" required=""/>
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <input type="number" name="age" class="form-control" placeholder="Age" value="" required=""/>
+                                        </div>
+                                        
+                                          <div class = "form-group">
+                                            <select name = "gender" id="gender" class="form-control">
+                                         <option value = "gender-select">Select Gender</option>
+                                         <option value = "Female">Female</option>
+                                         <option value = "Male">Male</option>
+                                              </select>
+                                         
+                                        </div>
+                                              <div class="form-group">
+                                            <input type="number" name="phone number" class="form-control" placeholder="Phone Number " value="" required=""/>
+                                        </div>
+                                              
+                                          <div class = "form-group">
+                                            <select name = "vehicles" id="vehicles" class="form-control" >
+                                          <option value = "transportation-select">Vehicles</option>
+                                          <option value = "Motorcycle">Motorcycle</option>
+                                          <option value = "Tricycle">Tricycle</option>
+                                          <option value = "Car">Car</option>
+                                         </select>
+                                        </div>
+                                                 <div class="form-group">
+                                            <input type="plate number" name="Platenumber" class="form-control" placeholder="Plate Number " value="" required=""/>
+                                        </div>
+                                              
+                                                 <div class="form-group">
+                                            <input type="text" name="carmodel" class="form-control" placeholder="Car Model " value="" required=""/>
+                                        </div>
+                                              
+                                    <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Register" />
+                                        </div>
+                                        
+                                        <button type="reset">clear</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzp1pBQobgrtW8BFaJ28aqi4cSp8_4o_0HTNEVGHCRRQNW-UHa4XxVjpJph7XeUU2ft/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Sucessfully registered..!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

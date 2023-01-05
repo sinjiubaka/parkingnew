@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <header>
+
+    <a href="#" class="logo"><span>PARKING</span>LOT</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="rhome.html">ABOUT</a>
+        <a href="registration.html">REGISTRATION</a>
+         <a href="reservation.html">RESERVATION</a>
+        
+    </nav>
+
+</header>
+    
+    
+    <style>
+            
+header{
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 1rem;
+    color:var(--purple);
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+header .navbar a{
+    font-size: 1rem;
+    margin-left: 2rem;
+    color:var(--purple);
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 3rem;
+    color:var(--purple);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 22%;
+                margin-left: 20%;
+            }
+            .register-heading{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: black;
+            }
+            .register-heading h1{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #e9ecef;
+            }
+            .register{
+                background: white;
+                margin-top: 3%;
+                padding: 3%;
+                border-radius: 2.5rem;
+            }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: green;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+    </style>
+
+</head>
+<body>
+    
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Reservation Form</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        
+                                          <div class="form-group">
+                                            <input type="plate number" name="Plate_number" class="form-control" placeholder="Plate number " value="" required=""/>
+                                        </div>
+                                        
+                                        
+                                                 <div class="form-group">
+                                            <input type="text" name="Car_model" class="form-control" placeholder="Car model " value="" required=""/>
+                                        </div>
+        
+                                         
+                                        <div class="form-group">
+                                            <input type="text" name="NAME" class="form-control" placeholder="NAME" value="" required=""/>
+                                        </div>
+                                        
+                                        
+                                             <div class="form-group">
+                                            <input type="number" name="PHONE_NUMBER" class="form-control" placeholder="PHONE NUMBER " value="" required=""/>
+                                        </div>
+                                                 <div class = "form-group">
+                                            <select name = "SEX" id="SEX" class="form-control">
+                                         <option value = "gender-select">Select Gender</option>
+                                         <option value = "Female">Female</option>
+                                         <option value = "Male">Male</option>
+                                              </select>
+                                         
+                                        </div>
+                                        
+                                    
+                                        <div class="form-group">
+                                            <input type="number" name="AGE" class="form-control" placeholder="AGE" value="" required=""/>
+                                        </div>  
+                                    
+                                        <div class="form-group">
+                                            <input type="date" name="DATE" class="form-control" placeholder="DATE" value="" required=""/>
+                                        </div>  
+                                    
+                                        
+                                         
+                                                <div class = "form-group">
+                                
+                                <select name = "TIME" id="TIME" class="form-control" > 
+                                <option value = "hour-select">Select Hour</option>
+                                <option value = "10">14: 00</option>
+                                <option value = "10">16: 00</option>
+                                <option value = "10">18: 00</option>
+                                <option value = "10">20: 00</option>
+                                <option value = "10">22: 00</option>
+                            </select>
+                            
+                              </div>
+                                              
+                                    <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Reserved" />
+                                        </div>
+                                         <button type="reset">clear</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzzX6GaxeIWpXKYIxaEeTdDLP-aDaUefz14crIx7YGFhuXpobTo7MwNWIxNllG9-sZP/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Sucessfully reserved..!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
